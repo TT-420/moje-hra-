@@ -3,11 +3,16 @@ using namespace std;
 
 int main(){
   cout<< "vitam te v tomto svete jmenem tralalelo tralala\n";
- int vyber;
+ int vyber=0, spokojenost;
   cout << "predtim nez zacnes hrat tak si musis vybrat za kterou postavu budes hrat: \n";
   cout << "1 - mag zvany Bambal\n";
   cout << "2 - ritir zvany Hromotluk\n";
   cout << "3 - trpaslik zvany Gundolf\n";
+
+ do{
+ if (spokojenost == 0){
+    cout << "opakujte vyber postavy: \n";
+ }
   cin >> vyber;
   cout << endl;
  switch(vyber){
@@ -34,11 +39,36 @@ int main(){
       cout << "Hromotlukuv zakladni utok je utok mecem hrdosti ktery ubira 3hp (stoji 1 manu)--(single attack)\n";
       cout << "Hromotluk muze jednou za tri kola aktivovat vetsi ostrost mece hrdosti a ubrat jednim utokem 15hp(stoji 8 many)--(single attack)\n";
       cout << "Hromotluk muze aktivovat horlavost na meci hrdosti a kdyz uderi nepritele tak mu ubere 8hp a nepritel mu v pristim tahu ubere jakymkoliv utokem o 40% min hp(stoji 10 many)--(single attack)\n";
-      cout << "Hromotluk muze aktivovat utok ktery utoci na vsechny nepritele v jeho blizkosti, tento utok ubere vsem nepretalum 5hp(stoji 3 many)--(splash damage)\n";
+      cout << "Hromotluk muze aktivovat utok ktery utoci na vsechny nepritele v jeho blizkosti, tento utok ubere vsem nepretalum 5hp(stoji 3 many)--(area damage)\n";
       cout << "Hromotluk se muze ovsem behem hry naucit nove utoky ci vylepsit ty zakladni\n";
       break;
+  case 3:
+      cout << "vybrali jste postavu Gundolf";
+      cout << endl << endl;
+      cout << "pocet hp - 110\n";
+      cout << "kapacita many - 40\n";
+      cout << endl;
+      cout << "schopnosti: \n";
+      cout << "Gundolfuv zalkadni utok je bodnuti jeho kudlou ktera ubira 2hp (stoji 1 manu)--(single attack)\n";
+      cout << "Gundolf muze jednou za dve kola aktivovat double utok kudlou a tim ubere 2x2hp (stoji 2 many)--(single attack)\n";
+      cout << "Gundolf muze jednou za tri kola aktivovat jed na kudle ktera ubira 4x4hp (stoji 4 many)--(single attack)\n";
+      cout << "Gundolf muze jednou za ctyri kola aktivovat sekeru kterou muze utocit na vsechny nepratele v mistosti, a vsem ubere za 10hp(stoji 8many)--(area damage)\n";
+      cout << "Gundolf se muze ovsem behem hry naucit nove utoky ci vylepsit zalkadni\n";
+      break;
+
   default:
     cout<< "vyberte cislo v rozmezi 1-3";
- }
+  }
 
+    cout << "jste spokojeni s vyberem (ano - 1/ne - 0)\n";
+    cin >> spokojenost;
+    cout << endl;
+    if(spokojenost <0 || spokojenost >1){
+    cout << "spatne zadana hodnota!!"<< endl;
+    }
+ }while(spokojenost == 0);
+ int zybtecnydotaz;
+  cout << "jsi pripraven zacit  hrat?\n";
+  cin >> zybtecnydotaz;
+  cout << "doufam ze ano jelikoz nemas na vyber\n" ;
 }
