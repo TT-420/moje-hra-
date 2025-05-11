@@ -6,13 +6,45 @@ void rozdelovac(){
 
 }
 void rozcesti(){
-     int vyber2;
+    rozdelovac();
+    cout<< "Jsi zpet na rozcesti\n";
+    int rozcestiVyber=0;
      cout << "1- muzes jit po ceste doprava smer mesto.\n";
      cout << "2- muzes jit rovne smer bazina.\n";
      cout << "3- muzes jit do leva smer cerne skaly.\n";
-     cin >> vyber2;
+     cin >> rozcestiVyber;
+      rozdelovac();
+     switch(rozcestiVyber){
+     case 1:
+int smer1;
+         cout << "Dosel jsi k hranicim mesta a straznici ti rekli ze vstup do mesta stoji 40 stribrnych. Co udelas?\n" ;
+         cout << "1- Zaplatis za vstup.\n";
+         cout << "2- Vratis se na rozcesti.\n";
+         cin >> smer1;
+        if (smer1 == 1){
+         cout << "Straze te pustili do mesta.\n";
+        }else if (smer1 ==2){
+          rozcesti();
+           }else {
+           cout << "Vyber z moznosti 1 nebo 2.\n";
+           }
+        break;
+     case 2:
+int smer2;
+         cout << "Dosel jsi do baziny. Pred sebou vidis malou chatku a z jejiho komina se kouri. Co udelas?\n" ;
+         cout << "1- Pujdes do chatky.\n";
+         cout << "2- Vratis se na rozcesti.\n";
+        break;
+     case 3:
+int smer3;
+        //cout <<;
+        //cout <<;
+     default:
+         cout<< "vyberte cislo v rozmezi 1-3";
      }
-
+}
+void mesto(){
+}
 int main(){
   cout<< "vitam te v tomto svete jmenem tralalelo tralala\n";
  int vyber=0, spokojenost;
@@ -106,19 +138,34 @@ int smer1;
          cout << "2- Vratis se na rozcesti.\n";
          cin >> smer1;
         if (smer1 == 1){
-         cout << "Straze te pustili do mesta.\n";
+         mesto();
         }else if (smer1 ==2){
-          cout << "Jsi zpet na rozcesti.\n";
           rozcesti();
            }else {
            cout << "Vyber z moznosti 1 nebo 2.\n";
            }
         break;
      case 2:
-         //cout << ;
-         //cout << ;
+int smer2;
+         cout << "Dosel jsi do baziny. Pred sebou vidis malou chatku a z jejiho komina se kouri. Co udelas?\n" ;
+         cout << "1- Pujdes do chatky.\n";
+         cout << "2- Vratis se na rozcesti.\n";
+         cin >> smer2;
+         if (smer2 == 1){
+    int bazinkA;
+         cout << "Kdyz jsi prochazel bazinou tak z poza stromu na tebe vyskocil TRIPI TROPA. Co udelas?\n";
+         cout << "1- Zaplatis mu 80 stribrnych.\n";
+         cout << "2- Das s nim duel.\n";
+         cin >> bazinkA;
+
+        }else if (smer2 ==2){
+          rozcesti();
+           }else {
+           cout << "Vyber z moznosti 1 nebo 2.\n";
+           }
         break;
      case 3:
+int smer3;
         //cout <<;
         //cout <<;
      default:
