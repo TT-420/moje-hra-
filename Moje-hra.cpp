@@ -1,6 +1,38 @@
 #include <iostream>
 using namespace std;
 
+int stribrny=50;
+int zlaty=1;
+int hp;
+int vyber=0;
+void bazinkADuel(){
+   int bazinkA;
+         cout << "Kdyz jsi prochazel bazinou tak z poza stromu na tebe vyskocil TRIPI TROPA. Co udelas?\n";
+         cout << "1- Zaplatis mu 80 stribrnych.\n";
+         cout << "2- Das s nim duel.\n";
+         cin >> bazinkA;
+    if(bazinkA == 1){
+        if (stribrny <80){
+            cout << "nedostatek stribrnych";
+        }else {
+         stribrny - 80;
+         bazina();
+        }
+    }else
+
+
+}
+void Bambal(){
+    int vyber
+ cout << "1-jaky utok chces provest: \n";
+ cout << "2-obycejny utok; -2hp=1 mana(single attack)\n";
+ cout << "3-sance na vyblokovani kouzlo opponenta; 35% sance na uspech= 5 many\n";
+ cout << "4-stit; 10 many(muzes pouzit jednou za pet kol\n";
+ cin >> vybeR;
+
+}
+void bazina(){
+}
 void rozdelovac(){
   cout << "________________________________________________________________________________________________________________________\n";
 
@@ -45,9 +77,14 @@ int smer3;
 }
 void mesto(){
 }
+void aktualniStav(){
+  cout << stribrny << endl;
+  cout << zlaty << endl;
+
+}
 int main(){
   cout<< "vitam te v tomto svete jmenem tralalelo tralala\n";
- int vyber=0, spokojenost;
+ int spokojenost;
   cout << "predtim nez zacnes hrat tak si musis vybrat za kterou postavu budes hrat: \n";
   cout << "1 - mag zvany Bambal\n";
   cout << "2 - ritir zvany Hromotluk\n";
@@ -122,12 +159,12 @@ int main(){
 
      cout << "Vcera jsi byl v hospode a od tretiho dzbanu piva si nic nepamatujes. Tvym prvnim ukolem je zjistit co se vcera vse stalo.\n";
      cout << "Probudil jsi se v lese na rozcesti.\n";
-     cout << "Mas u sebe 1 zlaty a 20 stribrnych (1 zlaty = 100 stribrnych), mas full hp a full manu.\n";
+     cout << "Mas u sebe 1 zlaty a 50 stribrnych (1 zlaty = 100 stribrnych), mas full hp a full manu.\n";
       rozdelovac();
  int rozcestiVyber=0;
      cout << "1- muzes jit po ceste doprava smer mesto.\n";
      cout << "2- muzes jit rovne smer bazina.\n";
-     cout << "3- muzes jit do leva smer cerne skaly.\n";
+     cout << "3- ;muzes jit do leva smer cerne skaly.\n";
      cin >> rozcestiVyber;
       rozdelovac();
      switch(rozcestiVyber){
@@ -152,16 +189,12 @@ int smer2;
          cout << "2- Vratis se na rozcesti.\n";
          cin >> smer2;
          if (smer2 == 1){
-    int bazinkA;
-         cout << "Kdyz jsi prochazel bazinou tak z poza stromu na tebe vyskocil TRIPI TROPA. Co udelas?\n";
-         cout << "1- Zaplatis mu 80 stribrnych.\n";
-         cout << "2- Das s nim duel.\n";
-         cin >> bazinkA;
+         bazinkADuel();
 
-        }else if (smer2 ==2){
+    }else if (smer2 ==2){
           rozcesti();
-           }else {
-           cout << "Vyber z moznosti 1 nebo 2.\n";
+           }else{
+             cout << "vyberte jednu z moznosti";
            }
         break;
      case 3:
@@ -169,6 +202,7 @@ int smer3;
         //cout <<;
         //cout <<;
      default:
-         cout<< "vyberte cislo v rozmezi 1-3";
+      cout<< "vyberte cislo v rozmezi 1-3";
+      }
      }
-}
+
