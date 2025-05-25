@@ -5,6 +5,33 @@ int stribrny=50;
 int zlaty=1;
 int hp;
 int vyber=0;
+
+void Bambal(){
+    int vybeR;
+ cout << "jaky utok chces provest: \n";
+ cout << "1-obycejny utok; -2hp=1 mana(single attack)\n";
+ cout << "2-sance na vyblokovani kouzlo opponenta; 35% sance na uspech= 5 many\n";
+ cout << "3-stit; 10 many(muzes pouzit jednou za pet kol\n";
+ cin >> vybeR;
+
+}
+void bazina(){
+    int odpoved;
+    cout << "Nez jsi stihl zaklepat na chatku tak se sami otevreli dvere dovnitr.   \n";
+    cout << "Kdyz jsi vesel dovnitr tak te privitala carodejnice a ma pro tebe navrh\n";
+    cout << "Potrebuje do sveho lektvaru urcite suroviny. Kdyz ji tyto suroviny sezenes tak te odmeni jak penezma tak zkusenostma do boje\n";
+    cout << "Beres jeji nabidku?\n";
+    cout << "ano-1 / ne-0\n";
+    cin >> odpoved;
+    if (odpoved==1){
+        cout << "Zde je seznam veci co carodejnice potrebuje: \n";
+        cout << "Hrst kouzelneho rozmarajna ==> naleznes u Babky korenarky v blizkem meste.\n";
+        cout << "Brasnu strelneho cerneho prachu ===> naleznes u zbrojnika v blizkem meste.\n" ;
+        cout << "Jednu lahev nejsilnejsiho rumu na trhu ==> naleznes v hospode v blizkem meste.\n" ;
+        cout << "Vytazek jedu z masozravky == > naleznes u zahradnika v blizkem meste.\n";
+    }else
+     cout << "Carodnejnice ti rekla ze ji jeste budes potrebovat ze uvidis.\n";
+}
 void bazinkADuel(){
    int bazinkA;
          cout << "Kdyz jsi prochazel bazinou tak z poza stromu na tebe vyskocil TRIPI TROPA. Co udelas?\n";
@@ -19,19 +46,10 @@ void bazinkADuel(){
          bazina();
         }
     }else
+     if (vyber==1){
+        Bambal();
+     }
 
-
-}
-void Bambal(){
-    int vyber
- cout << "1-jaky utok chces provest: \n";
- cout << "2-obycejny utok; -2hp=1 mana(single attack)\n";
- cout << "3-sance na vyblokovani kouzlo opponenta; 35% sance na uspech= 5 many\n";
- cout << "4-stit; 10 many(muzes pouzit jednou za pet kol\n";
- cin >> vybeR;
-
-}
-void bazina(){
 }
 void rozdelovac(){
   cout << "________________________________________________________________________________________________________________________\n";
@@ -199,8 +217,8 @@ int smer2;
         break;
      case 3:
 int smer3;
-        //cout <<;
-        //cout <<;
+        cout << "Dosel jsi az k cernym skalam. Před sebou vidis hluboky utes. Most pres tento utes je polorozpadli a cesta pres nej je prilis nebezpecna. Tudiz musis najit jinou cestu jak se dostat pres utes.\n";
+
      default:
       cout<< "vyberte cislo v rozmezi 1-3";
       }
