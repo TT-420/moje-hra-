@@ -15,6 +15,23 @@ void Bambal(){
  cin >> vybeR;
 
 }
+void Hromotluk(){
+    int vybeR;
+  cout << "jaky utok chces provest: \n";
+  cout << "1-utok mecem hrdosti; -3hp=1 mana(single attack)\n";
+  cout << "2-aktivovat vetsi ostrost mece hrdosti; -15hp=8 many(single attack)\n";
+  cout << "3-horlavost na meci hrdosti; -8hp a nepritel mu v pristim tahu ubere jakymkoliv utokem o 40% min hp(stoji 10 many)--(single attack)\n";
+  cout << "4-utok na vsechny v jeho okoli; -5hp=3 many--(area damage)\n";
+  cin >> vybeR;
+}
+
+void Gundolf(){
+      cout << "jaky utok chces provest: \n";
+      cout << "1-zakladni utok; -2hp=1mana(single attack)\n";
+      cout << "2-double utok; -2x2hp=2mana(single attack)\n";
+      cout << "3-jed na kudle; -4x4hp=4 many(single attack)\n";
+      cout << "4-sekera; -10hp=8many(are damage)\n";
+}
 void bazina(){
     int odpoved;
     cout << "Nez jsi stihl zaklepat na chatku tak se sami otevreli dvere dovnitr.   \n";
@@ -48,7 +65,12 @@ void bazinkADuel(){
     }else
      if (vyber==1){
         Bambal();
-     }
+        }else if (vyber==2){
+         Hromotluk();
+        }else
+          Gundolf();
+
+
 
 }
 void rozdelovac(){
