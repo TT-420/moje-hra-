@@ -1,10 +1,104 @@
 #include <iostream>
 using namespace std;
 
-int stribrny=50;
-int zlaty=1;
-int hp;
-int vyber=0;
+struct player{
+    int hp = maxHp;
+    int maxHp;
+    if(vyber==1){
+        maxHp=90;
+    }else if(vyber==2){
+        maxHp=150;
+    }else{
+        maxHp=110;
+        }
+    int mana;
+    int maxMana;
+    if(vyber==1){
+        maxMana=50;
+    }else if(vyber==2){
+        maxMana=30;
+    }else{
+        maxMana=40;
+        }
+    bool zmrazen = false;
+    bool otraven = false;
+};
+
+struct Mystifex{
+
+    int hp = 200;
+};
+
+void MystifexFight(){
+    Mystifex();
+    string pasti[] = {"mraziva", "hadi", "mlsna"};
+
+    while (player.hp > 0 && mystifex.hpHidden > 0) {
+        cout << "\nMystifexova HP: ??? | Tva HP: " << player.hp << endl;
+
+        int pastType = rand() % 3;
+        cout << "Mystifex poklada past: " << pasti[pastType] << endl;
+
+        int bonus = 0;
+        int roll = rand() % 4;
+        switch (roll) {
+            case 0: bonus = 2;
+             break;
+            case 1: bonus = 4;
+             break;
+            case 2: bonus = 6;
+             break;
+            case 3: bonus = 1;
+             break;
+        }
+        int totalDamage = 5 + bonus;
+        player.hp -= totalDamage;
+        cout << "Mystifex utoci za " << totalDamage << " poskozeni!\n";
+
+        if (player.hp <= 0) break;
+
+        if (player.frozen) {
+            cout << "Jsi zmrzly. Tohle kolo nic nemuzes delat.\n";
+            player.frozen = false;
+        } else {
+            cout << "Tve kolo. Chceš zautocit (a) nebo snist past (s)? ";
+            char choice;
+            cin >> choice;
+
+            if (choice == 's' && pastType == 2) {
+                cout << "Snedl jsi dobrutku. Healnul jsi se o 10 HP, prisel jsi o 10 max HP.\n";
+                player.hp += 10;
+                player.maxHp -= 10;
+                if (player.hp > player.maxHp) player.hp = player.maxHp;
+            } else {
+                int dmg = player.poisoned ? 1 : 10;
+                mystifex.hpHidden -= dmg;
+                cout << "Utcis na Mystifexe za " << dmg << " poskozeni.\n";
+            }
+        }
+
+        if (pastType == 0) {
+            cout << "Mraziva past se aktivuje. Zmrzl jsi.\n";
+            player.frozen = true;
+        } else if (pastType == 1) {
+            if (rand() % 2 == 0) {
+                cout << "Had te ustknul! Tve utoky budou slabe.\n";
+                player.poisoned = true;
+            } else {
+                cout << "Had si te nevsima, past zustava.\n";
+            }
+        } else if (pastType == 2 && choice != 'p') {
+            cout << "Mystifex snedl svou vlastni past! Leci se o 10 HP.\n";
+            mystifex.hpHidden += 10;
+        }
+    }
+
+    if (player.hp <= 0) {
+        cout << "\nZemrel jsi. Mystifex vitezi.\n";
+    } else {
+        cout << "\nZvitezil jsi. Mystifex prohral\n";
+    }
+}
 
 void Bambal(){
     int vybeR;
